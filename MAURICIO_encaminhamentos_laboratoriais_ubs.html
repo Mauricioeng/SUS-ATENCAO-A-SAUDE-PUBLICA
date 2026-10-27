@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia de Exames e Procedimentos — UBS MAURÍCIO OLIVEIRA</title>
+<style>
+:root{--blue:#145b78;--teal:#187d78;--ink:#20313b;--muted:#5b6b73;--bg:#f3f7f8;--line:#d8e3e7;--warn:#fff4d6;--specialty:#e1f0fa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Arial,Helvetica,sans-serif}
+header{background:linear-gradient(120deg,#124b68,#187d78);color:#fff;padding:28px 18px}
+.wrap{max-width:1350px;margin:auto;padding:0 16px}h1{font-size:clamp(24px,4vw,36px);margin:0 0 8px}header p{margin:0;max-width:850px}
+main{padding:20px 0 42px}.notice{background:var(--warn);border:1px solid #ead69c;border-radius:10px;padding:14px 16px;margin-bottom:18px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.controls input,.controls select{font:inherit;padding:11px 12px;border:1px solid #bdcdd3;border-radius:8px;background:#fff;min-width:180px}.controls input{flex:1;min-width:240px}
+.stats{color:var(--muted);font-size:13px;margin-bottom:8px}.tablebox{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:1100px}th{background:#e7f0f3;color:#163e50;text-align:left;position:sticky;top:0;z-index:1}th,td{padding:11px 12px;border-bottom:1px solid #e5ecef;vertical-align:top}tbody tr:nth-child(even){background:#f9fbfc}tbody tr:hover{background:#edf7f6}
+.tag{display:inline-block;border-radius:5px;padding:2px 7px;font-size:12px;font-weight:bold;background:#e4f3ef;color:#17634f}.tag.caution{background:#fff0d2;color:#795000}.tag.check{background:#e8edf9;color:#344f91}.tag.spec{background:var(--specialty);color:#0e4063;border:1px solid #b6d5ea}
+section{margin:26px 0}h2{font-size:22px;color:var(--blue)}h3{font-size:17px;margin:0 0 8px;color:var(--blue)}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}.card{background:white;border:1px solid var(--line);border-radius:10px;padding:15px}.card ul{padding-left:19px;margin:8px 0}.small{font-size:13px;color:var(--muted)}footer{padding:18px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+button{border:0;border-radius:8px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:bold;cursor:pointer}button:hover{filter:brightness(1.08)}@media print{body{background:#fff;font-size:11px}header{background:#fff;color:#000;padding:10px 0}.controls,button{display:none}.wrap{max-width:none;padding:0}.tablebox{overflow:visible;border:0}table{min-width:0;font-size:10px}th,td{padding:5px}.notice{break-inside:avoid}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>Guia de Exames e Procedimentos</h1><p>Rotina UBS: preparo de laboratório, endoscopias, ultrassons e inteligência em orientações/encaminhamentos para especialidades.</p></div></header>
+<main class="wrap">
+<div class="notice"><strong>Atenção — material de apoio, não substitui o protocolo oficial do prestador.</strong><br>A busca possui <em>Inteligência Avançada</em> (ignora acentos e entende siglas). O preparo para imagens (USG/Endoscopia) e exames complexos exige protocolos estritos — oriente o paciente a sempre ler o preparo impresso. Não recomende suspensão de medicamentos contínuos sem avaliação médica.</div>
+<div class="controls">
+<input id="search" type="search" placeholder="Pesquisar exame, sigla, preparo, especialidade (ex: Urologia, TOTG, USG)...">
+<select id="category"><option value="">Todas as categorias</option></select>
+<select id="fasting">
+    <option value="">Qualquer preparo (Jejum/Retenção)</option>
+    <option>Geralmente não exige jejum</option>
+    <option>Pode exigir jejum / confirmar</option>
+    <option>Exige jejum e/ou preparo rigoroso</option>
+    <option>Não se aplica / depende da coleta</option>
+</select>
+<button onclick="window.print()">Imprimir / salvar em PDF</button>
+</div>
+<div class="stats" id="stats" aria-live="polite"></div>
+<div class="tablebox"><table><thead><tr>
+    <th>Exame / Siglas Alternativas</th>
+    <th>Nome e Finalidade</th>
+    <th>Jejum / Condição</th>
+    <th>Preparo e Aconselhamento</th>
+    <th>Crianças</th>
+    <th>Encaminhamento / Especialidade</th>
+</tr></thead><tbody id="rows"></tbody></table></div>
+
+<section><h2>Orientações Específicas por Tipo de Procedimento</h2><div class="cards">
+<div class="card"><h3>Exames de Imagem (Ultrassonografias)</h3><ul><li><strong>Abdome Total / Superior:</strong> Exige jejum (6-8h) e uso de antigases (simeticona) na véspera. Abdome total exige bexiga cheia.</li><li><strong>Vias Urinárias e Pélvica Suprapúbica:</strong> Exige bexiga muito cheia (beber 4 a 6 copos de água 1h a 2h antes e não urinar).</li><li><strong>Pélvica Transvaginal:</strong> Realizada de bexiga vazia. Indolor. Não é feita em pacientes virgens.</li></ul></div>
+<div class="card"><h3>Endoscopia e Colonoscopia</h3><ul><li><strong>Endoscopia (EDA):</strong> Jejum absoluto de 8 a 12 horas (inclusive de água). É obrigatório levar acompanhante maior de idade.</li><li><strong>Colonoscopia:</strong> Preparo longo (2 a 3 dias) com dieta sem resíduos, uso de laxantes (manitol/picossulfato) em casa. Obrigatório acompanhante.</li><li>A suspensão de anticoagulantes deve ser orientada pelo médico.</li></ul></div>
+<div class="card"><h3>Curvas, Provas e Fluidos (TOTG, Espermograma)</h3><ul><li><strong>Curva Glicêmica (TOTG):</strong> Paciente ficará retido no laboratório por cerca de 2 horas. Orientar a não agendar compromissos logo em seguida.</li><li><strong>Espermograma:</strong> A abstinência sexual deve ser seguida à risca (geralmente 2 a 7 dias). Ideal coletar no próprio local.</li><li><strong>Exames de Alergia (IgE):</strong> Antialérgicos podem, ou não, precisar ser pausados dependendo da técnica; checar com o laboratório.</li></ul></div>
+</div></section>
+<footer>Guia educativo de consulta rápida UBS MAURÍCIO OLIVEIRA. Buscas otimizadas com inteligência (ignora acentos). Atualize quando a rede municipal alterar os prestadores/protocolos.</footer>
+</main>
+<script>
+// Estrutura: [Exame/Sigla, Finalidade, Jejum/Condição, Preparo, Crianças, Especialidade/Encaminhamento, Categoria]
+const data = [
+/* ROTINA BIOQUÍMICA E HEMATOLOGIA */
+["Hemograma completo / Eritrograma / Leucograma","Células vermelhas, brancas e plaquetas.","Geralmente não exige jejum","Seguir instruções locais; informar medicamentos relevantes.","Confirmar se a criança tem preparo específico." ,"Clínica Médica / Hematologia","Hematologia"],
+["Glicemia de jejum","Glicose sanguínea após período sem ingestão calórica.","Pode exigir jejum / confirmar","Confirmar tempo de jejum (geralmente 8h); água pura costuma ser permitida.","Confirmar tempo por idade; nunca prolongar jejum.","Clínica Médica / Endocrinologia","Glicose e diabetes"],
+["Hemoglobina glicada (HbA1c / A1C)","Estimativa da glicemia média dos últimos 3 meses.","Geralmente não exige jejum","Não confundir com glicemia de jejum; conferir exames associados.","Sem preparo específico.","Clínica / Endocrinologia","Glicose e diabetes"],
+["Curva Glicêmica / TOTG / Teste de Tolerância","Avaliação de diabetes e resistência à insulina (inclui gestantes).","Exige jejum e/ou preparo rigoroso","Jejum de 8h a 12h. O paciente tomará xarope de glicose no laboratório e fará coletas seguidas durante 2h, devendo ficar em repouso no local.","Confirmar indicação pediátrica.","Endocrinologia / Obstetrícia (Pré-Natal)","Glicose e diabetes"],
+["Colesterol total (CT) e Frações (HDL, LDL)","Avaliação de lipídios e risco cardiovascular.","Geralmente não exige jejum","Seguir protocolo (antes exigia 12h, hoje muitos dispensam, a menos que TG alterado).","Confirmar instruções específicas.","Clínica Médica / Cardiologia","Lipídios"],
+["Triglicerídeos (TG)","Gorduras circulantes no sangue.","Pode exigir jejum / confirmar","Se TG > 400 em exame anterior, o protocolo pode voltar a exigir 12h de jejum.","Confirmar com laboratório/pediatra.","Clínica Médica / Cardiologia","Lipídios"],
+["Ureia","Substância usada na avaliação da função renal.","Geralmente não exige jejum","Informar medicamentos e dieta rica em proteínas se solicitado.","Confirmar protocolo local.","Clínica Médica / Nefrologia","Rins e urina"],
+["Creatinina sérica (CREA)","Marcador usado para avaliar função renal.","Geralmente não exige jejum","Evitar interpretar isoladamente; informar suplementos de creatina.","Confirmar protocolo local.","Clínica Médica / Nefrologia","Rins e urina"],
+["Ácido úrico sérico","Produto do metabolismo das purinas (Gota/Cálculos).","Geralmente não exige jejum","Confirmar preparo no protocolo do laboratório.","Confirmar instruções.","Clínica Médica / Reumatologia","Bioquímica"],
+["Sódio (Na) / Potássio (K) / Cálcio / Magnésio / Fósforo","Eletrólitos medidos no sangue.","Geralmente não exige jejum","Não alterar medicamentos (ex: diuréticos); seguir orientação.","Confirmar protocolo.","Clínica / Nefrologia / Endocrino","Bioquímica"],
+["TGO (AST) / TGP (ALT) / GGT","Enzimas de avaliação e lesão hepática (fígado).","Geralmente não exige jejum","Informar medicamentos e ingestão alcoólica recente.","Confirmar protocolo.","Clínica / Gastro / Hepatologia","Fígado e enzimas"],
+["Fosfatase alcalina (FA) e Bilirrubinas","Enzima relacionada a fígado/ossos e pigmentos biliares.","Pode exigir jejum / confirmar","Conferir instruções específicas. Amostra de bilirrubina deve ser protegida da luz.","Valores de FA variam alto com crescimento infantil.","Gastro / Hepatologia / Ortopedia","Fígado e enzimas"],
+["Albumina / Proteínas totais e frações","Proteínas sanguíneas, globulinas.","Geralmente não exige jejum","Confirmar se há exames associados.","Confirmar protocolo.","Clínica / Nutrologia / Nefrologia","Proteínas"],
+["PCR (Proteína C-reativa) e VHS","Marcadores inespecíficos de inflamação/infecção.","Geralmente não exige jejum","Distinguir PCR inflamatório de PCR biologia molecular (swab).","Confirmar protocolo.","Clínica Médica / Reumatologia","Inflamação"],
+["CPK / CK (Creatinoquinase)","Enzima ligada à musculatura (lesão muscular, estatinas).","Geralmente não exige jejum","Informar exercícios físicos intensos recentes e uso de estatinas; evitar musculação na véspera.","Confirmar protocolo.","Reumatologia / Medicina Esportiva","Músculos e coração"],
+["CK-MB / Troponina I e T / LDH","Marcadores de infarto e lesões teciduais.","Geralmente não exige jejum","Em suspeita de infarto/dor no peito, orientar IDA AO PRONTO-SOCORRO. Não é exame para agendar em UBS.","Conforme avaliação clínica de urgência.","Cardiologia / Urgência","Músculos e coração"],
+
+/* HORMÔNIOS, VITAMINAS E ALERGIAS */
+["TSH / T4 livre / T3","Avaliação de função da Tireoide.","Geralmente não exige jejum","Usuários de hormônio (Levotiroxina/Puran) devem tomar o remédio só APÓS a coleta no dia do exame. Informar uso de biotina.","Confirmar protocolo.","Clínica Médica / Endocrinologia","Tireoide e hormônios"],
+["Anti-TPO / Anti-Tg","Anticorpos contra a tireoide (Doenças Autoimunes).","Geralmente não exige jejum","Confirmar se há exames associados.","Confirmar protocolo.","Endocrinologia","Tireoide e hormônios"],
+["Testosterona (Total e Livre)","Hormônio sexual e avaliação de libido/hipogonadismo.","Pode exigir jejum / confirmar","Normalmente coleta preferencial até às 10h da manhã (pico do hormônio). Informar terapias de reposição.","Endocrino Pediátrico em casos específicos.","Endocrinologia / Urologia / Ginecologia","Hormônios e outros"],
+["Ferro sérico / Ferritina","Avaliação dos estoques de ferro do corpo.","Pode exigir jejum / confirmar","Informar se faz uso de suplementos (sulfato ferroso). Ferritina pode alterar por inflamação.","Confirmar com equipe.","Clínica Médica / Hematologia","Ferro e vitaminas"],
+["Transferrina / Saturação da Transferrina","Proteína de transporte do ferro no sangue.","Pode exigir jejum / confirmar","Confirmar preparo, geralmente pedido junto com o ferro.","Confirmar protocolo local.","Hematologia / Gastroenterologia","Ferro e vitaminas"],
+["Vitamina B12 / Ácido Fólico","Vitaminas ligadas a anemia e função neurológica.","Geralmente não exige jejum","Informar uso de complexos vitamínicos.","Confirmar protocolo local.","Clínica / Neurologia / Hematologia","Ferro e vitaminas"],
+["Vitamina D (25-OH)","Exame para avaliar o estoque de vitamina D.","Geralmente não exige jejum","Informar suplementação. Não alterar dose sem orientação médica.","Confirmar necessidade pediátrica.","Endocrinologia / Reumatologia","Ferro e vitaminas"],
+["Alergias / RAST / IgE Total e Específico","Pesquisa de anticorpos de alergia (ácaros, alimentos, etc).","Geralmente não exige jejum","Confirmar no protocolo se precisa suspender antialérgicos ou corticoides (alguns métodos não exigem).","Muito comum em investigação infantil.","Alergologia / Imunologia / Pediatria","Imunologia e Alergias"],
+
+/* COAGULAÇÃO, SOROLOGIA E URINA/FEZES */
+["TAP (TP / INR) / TTPA","Avaliação de coagulação e risco de sangramento.","Geralmente não exige jejum","Informar uso de anticoagulantes (Marevan, Xarelto, AAS, etc); não suspender sem ordem médica.","Confirmar preparo.","Cirurgia (Pré-op) / Cardiologia","Coagulação"],
+["Fibrinogênio / Dímero-D","Avaliação de trombose e via da coagulação.","Geralmente não exige jejum","Interpretar conforme contexto clínico. Suspeita de Trombose (TVP) é emergência.","Conforme indicação.","Angiologia / Cirurgia Vascular","Coagulação"],
+["Sorologias (HIV, Sífilis/VDRL, Hepatites, IgG/IgM)","Pesquisa de DSTs e outras infecções virais/bacterianas.","Geralmente não exige jejum","Respeitar aconselhamento; avaliar janela imunológica. Interpretar testes treponêmicos com cuidado.","Seguir protocolo clínico e ECA.","Infectologia / CTA / Ginecologia","Sorologias"],
+["Urina 24h (Clearance / Proteína 24h)","Avaliação de função renal com urina cronometrada.","Não se aplica / depende da coleta","Esvaziar bexiga no início (desprezar) e anotar hora. Coletar todas micções por exatas 24h.","Confirmar viabilidade e uso de coletores.","Nefrologia","Rins e urina"],
+["EAS / Urina tipo 1 / Urocultura","Análise química, sedimento e pesquisa de bactérias.","Não se aplica / depende da coleta","Higiene prévia, jato médio. Para urocultura, frasco estéril. Informar uso de antibióticos.","Usar coletor infantil com assepsia adequada (máx 30 min por saco coletor).","Clínica / Urologia / Nefrologia","Rins e urina"],
+["Relação Albumina/Creatinina Urinária (ACR/Microalbuminúria)","Marcador de lesão renal precoce (diabéticos/hipertensos).","Não se aplica / depende da coleta","Pode ser em amostra isolada (preferível primeira da manhã).","Confirmar instruções.","Endocrinologia / Nefrologia","Rins e urina"],
+["EPF / Coprocultura / Sangue Oculto / Calprotectina","Parasitológico, bactérias, sangue em fezes e inflamação.","Não se aplica / depende da coleta","Sangue oculto exige dieta específica dependendo do kit. Calprotectina exige envio rápido/refrigeração.","Coleta adaptada à idade, sem fralda descartável direta.","Gastroenterologia / Proctologia","Fezes"],
+
+/* OUTROS FLUIDOS E MARCADORES */
+["PSA (Total e Livre)","Antígeno Prostático para rastreio da próstata.","Geralmente não exige jejum","Pausa sexual de 2 a 3 dias. Não andar a cavalo, moto ou bicicleta. Aguardar dias após toque retal.","Não se aplica.","Urologia / Oncologia","Hormônios e outros"],
+["Espermograma (Espermocultura)","Avaliação da fertilidade masculina, pós-vasectomia ou infecções.","Não se aplica / depende da coleta","Abstinência sexual de 2 a 7 dias (confirmar protocolo do laboratório). Coleta ideal no local para evitar choque térmico.","Não se aplica.","Urologia / Reprodução Humana","Fluidos e Outros"],
+["Beta-hCG (Sangue ou Urina)","Diagnóstico de gravidez.","Geralmente não exige jejum","Se sangue, qualquer hora. Se urina, preferir a primeira da manhã (maior concentração).","Avaliação de casos específicos na adolescência.","Ginecologia / Obstetrícia","Hormônios e outros"],
+
+/* IMAGEM E ENDOSCOPIA */
+["Endoscopia Digestiva Alta (EDA)","Visualiza esôfago, estômago e duodeno (gastrite, úlcera).","Exige jejum e/ou preparo rigoroso","Jejum absoluto (nem água) de 8 a 12h. Exige acompanhante maior de idade. Realizada sob sedação leve/profunda.","Realizada em ambiente adaptado com anestesista.","Gastroenterologia / Cirurgia Geral","Imagem e Endoscopia"],
+["Colonoscopia","Visualiza o intestino grosso, pesquisa de pólipos e câncer.","Exige jejum e/ou preparo rigoroso","Preparo longo (dias antes) com dieta sem resíduos (sem sementes/fibras). Uso de laxantes para limpar o cólon. Acompanhante obrigatório.","Protocolo de internação/anestesia pediátrica.","Proctologia / Gastroenterologia","Imagem e Endoscopia"],
+["USG Abdome Total","Avalia fígado, vesícula, pâncreas, baço, rins e bexiga.","Exige jejum e/ou preparo rigoroso","Jejum de 6 a 8h. Tomar antigases (simeticona) na véspera. BEXIGA CHEIA (beber muita água antes).","Jejum adaptado à idade pela pediatria.","Clínica Médica / Cirurgia / Gastro","Imagem e Endoscopia"],
+["USG Abdome Superior","Avalia fígado, vesícula, vias biliares e pâncreas.","Exige jejum e/ou preparo rigoroso","Jejum de 6 a 8h. Antigases na véspera. NÃO precisa de bexiga cheia.","Jejum reduzido conforme idade.","Gastroenterologia / Hepatologia","Imagem e Endoscopia"],
+["USG Vias Urinárias (Aparelho Urinário)","Avalia rins, ureteres e bexiga (pesquisa de cálculos/cistos).","Pode exigir jejum / confirmar","Não exige jejum alimentar rigoroso, mas EXIGE BEXIGA CHEIA (beber 4 a 6 copos de água 1 a 2h antes).","Oferecer líquidos e reter conforme possível.","Urologia / Nefrologia","Imagem e Endoscopia"],
+["USG Pélvica Transvaginal","Avaliação interna do útero, ovários e anexos.","Geralmente não exige jejum","Realizado com BEXIGA VAZIA (urinar antes de entrar). NÃO é feito em pacientes virgens.","Não se aplica.","Ginecologia / Obstetrícia (fase inicial)","Imagem e Endoscopia"],
+["USG Pélvica Suprapúbica (via abdominal)","Avaliação de útero e ovários por cima do abdome.","Geralmente não exige jejum","EXIGE BEXIGA CHEIA. Usado para pacientes virgens, crianças ou quando não toleram transvaginal.","Oferecer líquidos antes.","Ginecologia / Pediatria / Hebiatria","Imagem e Endoscopia"],
+["USG Próstata (Via Abdominal ou Transretal)","Avaliação do tamanho e alterações da próstata.","Pode exigir jejum / confirmar","Via Abdominal: Bexiga cheia. Via Transretal: Esvaziamento retal com laxante/Phosfoenema horas antes (confirmar onde agenda).","Não se aplica.","Urologia / Oncologia","Imagem e Endoscopia"],
+["Ecocardiograma / ECG (Eletrocardiograma)","Avaliação estrutural e elétrica do coração.","Geralmente não exige jejum","Sem preparo específico. Homens podem precisar raspar pelos do peito para o ECG. Trazer exames antigos.","Manter a criança calma; colo da mãe.","Cardiologia / Risco Cirúrgico","Imagem e Cardiologia"]
+];
+
+const tbody = document.getElementById('rows'), search = document.getElementById('search'), category = document.getElementById('category'), fasting = document.getElementById('fasting'), stats = document.getElementById('stats');
+
+// Preenche opções de categoria
+[...new Set(data.map(x=>x[6]))].sort().forEach(c=>{
+    let o = document.createElement('option');
+    o.value = c; o.textContent = c;
+    category.appendChild(o);
+});
+
+// Função para formatar tags HTML
+function esc(s){
+    return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))
+}
+
+// Inteligência de busca avançada: Remove acentos, cedilhas e deixa minúsculo
+function normalizarTexto(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase('pt-BR');
+}
+
+function render(){
+    let q = normalizarTexto(search.value);
+    let cat = category.value;
+    let f = fasting.value;
+    
+    let filtered = data.filter(r => {
+        let matchCat = (!cat || r[6] === cat);
+        let matchFast = (!f || r[2] === f);
+        // Junta toda a linha e normaliza para a busca (assim acha a sigla ou a doença ou o médico)
+        let rowText = normalizarTexto(r.join(' '));
+        let matchQuery = rowText.includes(q);
+        
+        return matchCat && matchFast && matchQuery;
+    });
+    
+    tbody.innerHTML = filtered.map(r => `<tr>
+        <td><strong>${esc(r[0])}</strong><br><span class="small" style="color:var(--teal)">${esc(r[6])}</span></td>
+        <td>${esc(r[1])}</td>
+        <td><span class="tag ${r[2].includes('Exige')||r[2].includes('Pode')?'caution':r[2].includes('Não')?'check':''}">${esc(r[2])}</span></td>
+        <td>${esc(r[3])}</td>
+        <td>${esc(r[4])}</td>
+        <td><span class="tag spec">${esc(r[5])}</span></td>
+    </tr>`).join('');
+    
+    stats.textContent = `Encontrado(s) ${filtered.length} procedimento(s). Busca inteligente ativa.`;
+}
+
+search.addEventListener('input', render);
+category.addEventListener('change', render);
+fasting.addEventListener('change', render);
+render();
+</script>
+</body>
+</html>
